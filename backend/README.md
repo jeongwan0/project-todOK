@@ -32,4 +32,5 @@ Spring Boot 기반의 Todo List 백엔드 프로젝트입니다.
 
 ## 실행 방법
 ```bash
-./mvnw spring-boot:run
+cd /c/project-todOK/backend
+./mvnw.cmd spring-boot:run
