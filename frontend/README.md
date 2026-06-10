@@ -29,6 +29,7 @@ React 기반의 투두리스트 및 캘린더 프론트엔드 프로젝트입니
 
 ## 실행 방법
 ```bash
-cd /c/project-todOK/frontend
+cd ./frontend
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 npm install
 npm run dev

@@ -16,3 +16,10 @@ ms-teme
 Prettier - Code formatter
 Code Runner
 indent-rainbow
+
+< 초기 설정 - 프로그램>
+1. Git
+
+2. Node.js LTS
+
+3. Java JDK 17
