@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "";
 
 export const loginRequest = async (loginId, password) => {
   const response = await fetch(`${BASE_URL}/auth/login`, {
