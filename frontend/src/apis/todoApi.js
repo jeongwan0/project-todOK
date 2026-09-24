@@ -1,4 +1,4 @@
-const BASE_URL = "";
+import { BASE_URL } from "./apiConfig";
 
 export const getTodosByDateRequest = async (userId, date) => {
   const response = await fetch(

@@ -1,4 +1,4 @@
-const BASE_URL = "";
+import { BASE_URL } from "./apiConfig";
 
 export const loginRequest = async (loginId, password) => {
   const response = await fetch(`${BASE_URL}/auth/login`, {
