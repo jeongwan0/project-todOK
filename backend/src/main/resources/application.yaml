@@ -3,9 +3,9 @@ spring:
     name: spring-boot-study
 
   datasource:
-    url: jdbc:mysql://localhost:3306/todo
-    username: root
-    password: mkjy9821!
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -15,3 +15,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+server:
+  port: ${PORT:8080}

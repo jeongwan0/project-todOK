@@ -13,8 +13,7 @@ export const loginRequest = async (loginId, password) => {
   });
 
   if (!response.ok) {
-    const message = await response.text();
-    throw new Error(message || "회원가입 실패");
+    throw new Error("로그인 실패");
   }
 
   return await response.json();
@@ -34,7 +33,8 @@ export const signupRequest = async ({ loginId, password, nickname }) => {
   });
 
   if (!response.ok) {
-    throw new Error("회원가입 실패");
+    const message = await response.text();
+    throw new Error(message || "회원가입 실패");
   }
 
   return await response.json();
