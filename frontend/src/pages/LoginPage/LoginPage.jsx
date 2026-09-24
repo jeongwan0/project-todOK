@@ -68,7 +68,7 @@ export default function LoginPage() {
       setPwInputVal("");
       alert("회원가입이 완료되었습니다!");
     } catch (error) {
-      alert("회원가입에 실패했습니다.");
+      alert(error.message);
       console.error(error);
     }
   };

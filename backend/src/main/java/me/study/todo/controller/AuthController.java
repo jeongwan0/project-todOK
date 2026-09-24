@@ -8,6 +8,7 @@ import me.study.todo.dto.UpdateUserReqDto;
 import me.study.todo.service.AuthService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/auth")
@@ -20,8 +21,18 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public SignupRespDto signup(@RequestBody SignupReqDto dto) {
-        return authService.signup(dto);
+    public ResponseEntity<?> signup(@RequestBody SignupReqDto dto) {
+        try {
+            return ResponseEntity.ok(authService.signup(dto));
+        } catch (RuntimeException e) {
+            if ("이미 사용 중인 아이디입니다.".equals(e.getMessage())) {
+                return ResponseEntity
+                        .status(HttpStatus.CONFLICT)
+                        .body(e.getMessage());
+            }
+
+            throw e;
+        }
     }
 
     @PostMapping("/login")
